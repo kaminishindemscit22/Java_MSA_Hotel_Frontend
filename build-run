@@ -1,0 +1,5 @@
+#!/bin/sh
+mvn clean package
+docker build -t kamini019/UserApplication .
+docker rm -f UserApplication 2>/dev/null || true
+docker run -it --name UserApplication -p 8080:8080 --name UserApplication kamini019/UserApplication
